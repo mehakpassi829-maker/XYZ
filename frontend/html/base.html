@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/color.css') }}?v={{ config['SEND_FILE_MAX_AGE_DEFAULT'] }}">
+    <link rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}?v={{ config['SEND_FILE_MAX_AGE_DEFAULT'] }}">
+        {% block page_css %}{% endblock %}
+    <title>{% block title %}Edu Save AI{% endblock %}</title>
+</head>
+
+<body>
+   
+     <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    {% include "components/footer.html" %}
+    {% block page_js %}{% endblock %}
+
+</body>
+
+</html>

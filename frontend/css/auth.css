@@ -1,0 +1,175 @@
+/* ------------------ GENERAL ------------------ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-white);
+}
+
+/* ------------------ CARD ------------------ */
+.container {
+  position: relative;
+  width: 850px;
+  height: 520px;
+  background-color: var(--bg-light);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* ------------------ FORM CONTAINERS ------------------ */
+.form-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.6s ease-in-out;
+}
+
+/* LOGIN FORM */
+.sign-in {
+  left: 0;
+  z-index: 2;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* SIGNUP FORM */
+.sign-up {
+  left: 0;
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* SWITCH ANIMATION */
+.container.active .sign-in {
+  transform: translateX(100%);
+  opacity: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.container.active .sign-up {
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 2;
+  pointer-events: auto;
+}
+
+/* ------------------ FORM STYLE ------------------ */
+form {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  text-align: center;
+}
+
+form h1 {
+  margin-bottom: 20px;
+  color: var(--primary-cyan);
+}
+
+input {
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 20px;
+  border: 1px solid rgb(200, 200, 200);
+  background-color: var(--bg-white);
+  color: var(--text-black);
+  outline: none;
+}
+
+input::placeholder {
+  color: var(--text-gray);
+}
+
+/* ------------------ BUTTONS ------------------ */
+button {
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 20px;
+  background-color: var(--primary-cyan);
+  color: var(--text-white);
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: var(--primary-cyan-dark);
+  transform: scale(1.05);
+}
+
+/* ------------------ OVERLAY ------------------ */
+.overlay-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.6s ease-in-out;
+}
+
+.overlay {
+  background-color: var(--primary-cyan);
+  color: var(--text-white);
+  position: relative;
+  left: -100%;
+  height: 100%;
+  width: 200%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+  display: flex;
+}
+
+.container.active .overlay-container {
+  transform: translateX(-100%);
+}
+
+.container.active .overlay {
+  transform: translateX(50%);
+}
+
+.overlay-panel {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+}
+
+.overlay-panel h1,
+.overlay-panel p {
+  margin-bottom: 20px;
+}
+
+.overlay-panel button {
+  background-color: var(--bg-white);
+  color: var(--primary-cyan);
+  border-radius: 20px;
+}
+
+.overlay-panel button:hover {
+  background-color: var(--btn-hover);
+}
+
+/* ------------------ CARD HOVER SHADOW ------------------ */
+.container:hover {
+  box-shadow: 0 25px 50px rgba(3, 233, 233, 0.3);
+}

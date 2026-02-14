@@ -16,6 +16,8 @@ import pyrebase
 
 
 app = Flask(__name__, template_folder="frontend/html", static_folder="frontend")
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
+
 
 CORS(app)
 

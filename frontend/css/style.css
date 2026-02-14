@@ -1,49 +1,69 @@
-body{
-    margin: 0;
-    padding: 0;
-    background-color: rgb(255, 255, 255);
+/* ------------------ GENERAL ------------------ */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-white);
+  font-family: Arial, sans-serif;
+  color: var(--text-black);
 }
-header nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1px;
-    background-color: rgb(3, 233, 233);
-    height: 60px;
+
+/* ------------------ NAVBAR ------------------ */
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1px;
+  background-color: var(--primary-cyan);
+  height: 60px;
 }
 
 header nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    margin: 0;
-    padding: 0;
-    font-size: 18px;  
-    width: 100px; 
-    
-}
-header nav ul li {
-    margin: 0 15px;
-}
-header nav ul li a {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-}
-header nav ul li a:hover {
-    color: white;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  width: 100px;
 }
 
-header nav .butt{
-    width: 80px;
-    height: 30px;
-    background-color: rgb(255, 255, 255);
-    margin-right: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    font-weight: bold;
-    
-    border-radius: 20px;
+header nav ul li {
+  margin: 0 15px;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: var(--text-black);
+  font-weight: bold;
+}
+
+header nav ul li a:hover {
+  color: var(--text-white);
+}
+
+/* ------------------ BUTTON ------------------ */
+header nav .butt {
+  width: 80px;
+  height: 30px;
+  background-color: var(--bg-white);
+  color: var(--primary-cyan);
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+header nav .butt:hover {
+  background-color: var(--btn-hover);
+}
+
+/* ------------------ DISPLAY FLEX ------------------ */
+.display-flex {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
 }

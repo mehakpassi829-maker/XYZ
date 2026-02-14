@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Login / Signup{% endblock %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/auth.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container" id="container">
+
+  <!-- LOGIN FORM -->
+  
+  {% include "components/login.html" %}
+
+  <!-- SIGNUP FORM -->
+    {% include "components/signup.html" %}
+
+  <!-- OVERLAY -->
+  <div class="overlay-container">
+    <div class="overlay">
+      <div class="overlay-panel left">
+        <h1>Welcome Back!</h1>
+        <p>To keep connected with us please login</p>
+        <button id="login" type="button">Login</button>
+      </div>
+      <div class="overlay-panel right">
+        <h1>Hello Friend!</h1>
+        <p>Enter your personal details and start journey with us</p>
+        <button id="signup" type="button">Sign Up</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+{% endblock %}
+
+{% block page_js %}
+<script src="{{ url_for('static', filename='js/auth.js') }}"></script>
+{% endblock %}
