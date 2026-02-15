@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/color.css') }}?v={{ config['SEND_FILE_MAX_AGE_DEFAULT'] }}">
     <link rel="stylesheet"
         href="{{ url_for('static', filename='css/style.css') }}?v={{ config['SEND_FILE_MAX_AGE_DEFAULT'] }}">
+        <link rel="stylesheet"
+        href="{{ url_for('static', filename='css/navbar.css') }}?v={{ config['SEND_FILE_MAX_AGE_DEFAULT'] }}">
         {% block page_css %}{% endblock %}
     <title>{% block title %}Edu Save AI{% endblock %}</title>
 </head>
@@ -16,6 +18,7 @@
      <main>
         {% block content %}
         {% endblock %}
+        <div class="AI-cotch">🤖</div>
     </main>
     {% include "components/footer.html" %}
     {% block page_js %}{% endblock %}

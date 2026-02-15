@@ -8,62 +8,54 @@ body {
 }
 
 /* ------------------ NAVBAR ------------------ */
-header nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1px;
-  background-color: var(--primary-cyan);
-  height: 60px;
-}
 
-header nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-  margin: 0;
-  padding: 0;
-  font-size: 18px;
-  width: 100px;
-}
-
-header nav ul li {
-  margin: 0 15px;
-}
-
-header nav ul li a {
-  text-decoration: none;
-  color: var(--text-black);
-  font-weight: bold;
-}
-
-header nav ul li a:hover {
-  color: var(--text-white);
-}
-
-/* ------------------ BUTTON ------------------ */
-header nav .butt {
-  width: 80px;
-  height: 30px;
-  background-color: var(--bg-white);
-  color: var(--primary-cyan);
-  margin-right: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  font-weight: bold;
-  border-radius: 20px;
-  cursor: pointer;
-}
-
-header nav .butt:hover {
-  background-color: var(--btn-hover);
-}
 
 /* ------------------ DISPLAY FLEX ------------------ */
 .display-flex {
   display: flex;
   flex-direction: row;
   gap: 10px;
+}
+/* 🤖 AI FLOAT BUTTON */
+.AI-cotch{
+    position:fixed;
+    width:65px;
+    height:65px;
+    background: linear-gradient(45deg,var(--primary-cyan),#00bcd4);
+    border-radius:50%;
+    bottom:25px;
+    right:25px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    font-size:28px;
+    cursor:pointer;
+    z-index:1000;
+    box-shadow:0 0 20px rgba(3,233,233,0.5);
+    transition:0.3s;
+}
+
+/* hover effect */
+.AI-cotch:hover{
+    transform: scale(1.12) rotate(8deg);
+    box-shadow:0 0 35px rgba(3,233,233,0.9);
+}
+
+/* pulse animation */
+.AI-cotch::after{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    border-radius:50%;
+    background: rgba(3,233,233,0.4);
+    z-index:-1;
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+    0%{transform:scale(1); opacity:0.7;}
+    70%{transform:scale(1.6); opacity:0;}
+    100%{opacity:0;}
 }

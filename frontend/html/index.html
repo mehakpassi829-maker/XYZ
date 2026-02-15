@@ -2,20 +2,23 @@
 
 {% block title %}Home{% endblock %}
 
+{% block page_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/modules.css') }}">
+{% endblock %}
+
 {% block content %}
-  {% include "components/navbar.html" %}
-    <div class="modules">
-        <div class="module">
-            <h2>Module 1</h2>
-            <p>Description of Module 1.</p>
-        </div>
-        <div class="module">
-            <h2>Module 2</h2>
-            <p>Description of Module 2.</p>
-        </div>
-        <div class="module">
-            <h2>Module 3</h2>
-            <p>Description of Module 3.</p>
-        </div>
+{% include "components/navbar.html" %}
+
+<div class="module-section">
+    <h2 class="module-title">Your Learning Modules</h2>
+
+    <div class="card-container">
+
+        {% for module in modules %}
+            {% include "components/card.html" %}
+        {% endfor %}
+
     </div>
+</div>
+
 {% endblock %}

@@ -39,7 +39,19 @@ auth = firebase.auth()
 
 @app.route("/")
 def home():
-    return render_template("index.html", name="Flask")
+    
+    modules = [
+        {"title": "Budget Basics", "desc": "Learn how to manage money", "icon": "💰"},
+        {"title": "Saving Skills", "desc": "Build strong saving habit", "icon": "📈"},
+        {"title": "Banking Basics", "desc": "Understand bank & UPI", "icon": "🏦"},
+        {"title": "Investment", "desc": "Grow your money smartly", "icon": "📊"},
+        {"title": "Crypto Intro", "desc": "Learn blockchain basics", "icon": "🪙"},
+        {"title": "AI Finance", "desc": "Use AI for saving", "icon": "🤖"},
+    ]
+
+    return render_template("index.html", name="Flask" , modules=modules)
+
+
 @app.route("/auth")
 def auth_page():
     return render_template("auth.html", name="Flask")

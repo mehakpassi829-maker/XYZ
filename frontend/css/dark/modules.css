@@ -1,0 +1,100 @@
+/* ---------------- MODULE SECTION ---------------- */
+.module-section{
+    padding: 40px;
+    text-align:center;
+}
+
+/* title */
+.module-title{
+    font-size:28px;
+    margin-bottom:30px;
+    color: var(--primary-cyan);
+}
+
+/* ---------------- GRID ---------------- */
+.card-container{
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+    gap:25px;
+    padding:20px 40px;
+}
+
+/* ---------------- CARD ---------------- */
+.module-card{
+    background: var(--bg-card);
+    border-radius:18px;
+    padding:25px;
+    border:1px solid var(--border);
+    backdrop-filter: blur(10px);
+    position:relative;
+    overflow:hidden;
+    transition:0.3s;
+}
+
+/* glow shine animation */
+.module-card::before{
+    content:"";
+    position:absolute;
+    width:150%;
+    height:150%;
+    background:linear-gradient(45deg,transparent,var(--primary-cyan),transparent);
+    top:-100%;
+    left:-100%;
+    transform:rotate(25deg);
+    opacity:0;
+}
+
+.module-card:hover::before{
+    animation:shine 1.2s;
+}
+
+@keyframes shine{
+    0%{top:-100%; left:-100%; opacity:0;}
+    50%{opacity:0.2;}
+    100%{top:100%; left:100%; opacity:0;}
+}
+
+/* hover card */
+.module-card:hover{
+    transform: translateY(-10px) scale(1.03);
+    border:1px solid var(--primary-cyan);
+    box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* icon */
+.card-icon{
+    font-size:40px;
+    margin-bottom:12px;
+}
+
+/* title */
+.card-title{
+    font-size:20px;
+    margin:10px 0;
+    color: var(--text-main);
+}
+
+/* desc */
+.card-desc{
+    color: var(--text-soft);
+    font-size:14px;
+    margin-bottom:18px;
+}
+
+/* button */
+.start-btn{
+    padding:10px 18px;
+    border:none;
+    background: linear-gradient(45deg,var(--primary-cyan),#00bcd4);
+    color:white;
+    border-radius:8px;
+    font-size:14px;
+    cursor:pointer;
+    width:100%;
+    transition:0.3s;
+}
+
+.start-btn:hover{
+    transform: scale(1.05);
+    box-shadow:0 0 15px var(--primary-cyan);
+}

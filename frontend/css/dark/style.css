@@ -1,0 +1,51 @@
+body{
+    margin:0;
+    padding:0;
+    background: var(--bg-main);
+    color: var(--text-main);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* smooth */
+*{
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+body::before{
+    content:"";
+    position:fixed;
+    width:600px;
+    height:600px;
+    background: radial-gradient(circle, rgba(108,99,255,0.15), transparent 70%);
+    top:-200px;
+    left:-200px;
+    z-index:-1;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    background: radial-gradient(circle, rgba(0,242,254,0.12), transparent 70%);
+    bottom:-200px;
+    right:-200px;
+    z-index:-1;
+}
+
+.AI-cotch{
+    position:fixed;
+    width:100px;
+    height:100px;
+    background: var(--accent);
+    border-radius:50%;
+    bottom:20px;
+    right:20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#d70c0c;
+    font-size:24px;
+    cursor:pointer;
+    z-index:1000;
+}
