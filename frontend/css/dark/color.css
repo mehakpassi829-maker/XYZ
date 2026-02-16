@@ -1,0 +1,14 @@
+:root{
+    --bg-main: #0f1117;
+    --bg-card: #1a1d26;
+    --bg-navbar: #141722;
+
+    --text-main: #ffffff;
+    --text-soft: #9aa4b2;
+
+    --primary: #6c63ff;
+    --primary2: #00f2fe;
+    --accent: #00c896;
+
+    --border: rgba(255,255,255,0.08);
+}
